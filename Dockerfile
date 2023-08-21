@@ -9,7 +9,7 @@ LABEL maintainer_email2="sunny33p@gmail.com"
 
 WORKDIR /var/www/html
 # Install git ant and java
-ARG version=2.7.1
+ARG version=3.1.1
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
     git-core \
@@ -52,9 +52,4 @@ VOLUME [ "/var/www/html/files" ]
 EXPOSE 80
 # Running Apache in foreground
 CMD ["apache2-foreground"]
-
-COPY docker-entrypoint.sh /var/www/html/docker-entrypoint.sh
-RUN chmod 755 /var/www/html/docker-entrypoint.sh
-
-ENTRYPOINT [ "/var/www/html/docker-entrypoint.sh" ]
 
