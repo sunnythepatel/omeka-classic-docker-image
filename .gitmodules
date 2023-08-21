@@ -1,0 +1,6 @@
+[submodule "plugins/Facets"]
+	path = plugins/Facets
+	url = https://github.com/systemizer/plugin-Facets
+[submodule "themes/CenterRow"]
+	path = themes/CenterRow
+	url = git@github.com:systemizer/theme-centerrow.git
