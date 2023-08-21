@@ -5,10 +5,10 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: //Any password you prefer for ex test@123
-      MYSQL_DATABASE: //Any db name for ex omeka
-      MYSQL_USER: //Sql user root
-      MYSQL_PASSWORD: //Any password you prefer for ex test@123
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: omeka
+      MYSQL_USER: omeka
+      MYSQL_PASSWORD: password
     # volumes:
     # mysql-data:
     #     driver: local
@@ -22,11 +22,12 @@ services:
       - "8080:80"
 
   omeka-s:
-    image: sunny3p/omeka-classic:latest
-    # links:
-    # - mysql
+    image: docker.io/systemizer/omeka-arm64
+    links:
+      - db:db
     restart: always
     volumes:
-      - ./app:/var/www/html/files
+      - ./themes:/var/www/html/themes
+      - ./plugins:/var/www/html/plugins
     ports:
-      - 80:80
+      - 8081:80
