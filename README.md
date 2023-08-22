@@ -1,24 +1,23 @@
-Omeka-Classic in docker
+# FWWCP Sandbox Local Development
 
-[![Open Source Helpers](https://www.codetriage.com/sunnythepatel/omeka-classic-docker-imange/badges/users.svg)](https://www.codetriage.com/sunnythepatel/omeka-classic-docker-imange)
+This repository has been adapted from sunnythepatel/omeka-classic-docker-image
 
-There is also example of docker-compose.yml file which can be used for development.
-It creates 3 containers:
+You can use this repository to run a version of the [FWWCP Website](http://fwwcpdigitalcollection.org/). We use docker, and the image for the Omeka installation defaults to a ARM64 (Mac OS compatible) image. If you are using windows, you will need to rebuild the omeka docker image using the provided Dockerfile.
 
-- mysql db
-- phpmyadmin
-- omeka-classic behind apache (modules or themes can be inserted via docker volumes
+## Getting Started (with Mac OS)
 
-`docker-compose up`
+1. First, install [Docker](https://docs.docker.com/desktop/install/mac-install/)
+2. Clone the Repository and install git submodules
 
-Commands to create docker image
+```
+git clone git@github.com:systemizer/omeka-classic-docker-image.git
+cd omeka-classic-docker-image
+git submodule update --init
+```
 
-sudo docker build -t sunny3p/omeka-classic .
-sudo docker push sunny3p/omeka-classic 
+3. Run the website using docker-compose
+```
+docker-compose up -d
+```
 
-Resources and Reference
-1. Docker documentation: https://docs.docker.com/engine/reference/builder/ 
-2. Docker Cheat Sheet: https://github.com/wsargent/docker-cheat-sheet 
-3. Docker Tutorial: https://www.flux7.com/tutorial/docker-tutorial-series-part-1-an-introduction-docker-components/
-4. Omeka-Classic Previous Old Docker Image: https://github.com/klokantech/omeka-docker  
-
+4. The website should now be working. Open a browser and navigate to [localhost:8081](http://localhost:8081)
