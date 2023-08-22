@@ -4,3 +4,15 @@
 [submodule "themes/CenterRow"]
 	path = themes/CenterRow
 	url = git@github.com:systemizer/theme-centerrow.git
+[submodule "plugins/SimplePages"]
+	path = plugins/SimplePages
+	url = git@github.com:omeka/plugin-SimplePages.git
+[submodule "plugins/Geolocation"]
+	path = plugins/Geolocation
+	url = git@github.com:omeka/plugin-Geolocation.git
+[submodule "plugins/CsvImportPlus"]
+	path = plugins/CsvImportPlus
+	url = git@github.com:Daniel-KM/Omeka-plugin-CsvImportPlus.git
+[submodule "plugins/DublinCoreExtended"]
+	path = plugins/DublinCoreExtended
+	url = https://github.com/omeka/plugin-DublinCoreExtended

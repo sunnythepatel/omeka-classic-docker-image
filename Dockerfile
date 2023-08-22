@@ -26,7 +26,7 @@ RUN apt-get update && \
 RUN pecl install mcrypt-1.0.3
 RUN docker-php-ext-enable mcrypt
 
-RUN docker-php-ext-install -j$(nproc) iconv pdo pdo_mysql gd mysqli
+RUN docker-php-ext-install -j$(nproc) iconv pdo pdo_mysql gd mysqli exif
 RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
 
 #Clone omeka-s - replace with git clone...
